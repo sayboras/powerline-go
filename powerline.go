@@ -5,11 +5,12 @@ import (
 	"fmt"
 	"strings"
 
+	"os"
+	"strconv"
+
 	"github.com/mattn/go-runewidth"
 	"golang.org/x/crypto/ssh/terminal"
 	"golang.org/x/text/width"
-	"os"
-	"strconv"
 )
 
 type ShellInfo struct {
@@ -245,8 +246,8 @@ func (p *powerline) draw() string {
 
 		var foreground, background uint8
 		if *p.args.PrevError == 0 {
-			foreground = p.theme.CmdPassedFg
-			background = p.theme.CmdPassedBg
+			foreground = p.theme.AWSFg
+			background = p.theme.AWSBg
 		} else {
 			foreground = p.theme.CmdFailedFg
 			background = p.theme.CmdFailedBg

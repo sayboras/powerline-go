@@ -53,7 +53,7 @@ var shellInfos = map[string]ShellInfo{
 	},
 	"zsh": {
 		colorTemplate:    "%%{\u001b%s%%}",
-		rootIndicator:    "%#",
+		rootIndicator:    "\\$",
 		escapedBackslash: `\\`,
 		escapedBacktick:  "\\`",
 		escapedDollar:    `\$`,
