@@ -114,6 +114,7 @@ var modules = map[string](func(*powerline)){
 	"venv":      segmentVirtualEnv,
 	"vgo":       segmentVirtualGo,
 	"nix-shell": segmentNixShell,
+	"py":        segmentPy,
 }
 
 func comments(lines ...string) string {
