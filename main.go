@@ -47,6 +47,7 @@ type args struct {
 	NumericExitCodes     *bool
 	IgnoreRepos          *string
 	ShortenGKENames      *bool
+	ShortenEKSNames      *bool
 	ShellVar             *string
 	PathAliases          *string
 }
@@ -200,7 +201,11 @@ func main() {
 				"Repos are identified by their root directory.")),
 		ShortenGKENames: flag.Bool(
 			"shorten-gke-names",
-			false,
+			true,
+			comments("Shortens names for GKE Kube clusters.")),
+		ShortenEKSNames: flag.Bool(
+			"shorten-eks-names",
+			true,
 			comments("Shortens names for GKE Kube clusters.")),
 		ShellVar: flag.String(
 			"shell-var",

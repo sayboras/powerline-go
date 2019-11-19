@@ -80,6 +80,10 @@ func segmentKube(p *powerline) {
 		}
 	}
 
+	if strings.HasPrefix(cluster, "arn") && *p.args.ShortenEKSNames {
+		cluster = cluster[strings.Index(cluster, "/")+1:]
+	}
+
 	// Only draw the icon once
 	kubeIconHasBeenDrawnYet := false
 	if cluster != "" {
